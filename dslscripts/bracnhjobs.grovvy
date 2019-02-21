@@ -23,7 +23,7 @@ branches.each { branch ->
             scm 'H/30 * * * *'
         }
         steps {
-            grails 'test-app war', true
+            gradle 'test-app war', true
         }
     }
 
