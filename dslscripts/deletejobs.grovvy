@@ -5,7 +5,6 @@ import hudson.model.*
 
 import hudson.scm.*
 import hudson.tasks.*
-import com.cloudbees.hudson.plugins.folder.*
 
 
 jen = Jenkins.instance
@@ -26,7 +25,7 @@ void processJob(Item job) {
 
 void processFolder(Item folder) {
  folder.getItems().each {
-  if (it instanceof Folder) {
+  if (it instanceof com.cloudbees.hudson.plugins.folder.Folder) {
    processFolder(it)
   } else {
    processJob(it)
