@@ -11,7 +11,7 @@ import com.cloudbees.hudson.plugins.folder.*
 jen = Jenkins.instance
 
 jen.getItems().each {
- if (it instanceof Folder) {
+ if (it instanceof com.cloudbees.hudson.plugins.folder.Folder) {
   processFolder(it)
  } else {
   processJob(it)
