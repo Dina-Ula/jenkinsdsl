@@ -1,6 +1,8 @@
 jenkins.model.Jenkins.theInstance.getProjects().each { job ->
+
+    println job.name
+    
     if (!job.name.contains('deletejobs') && !job.name.contains('createbranchjobs')) {
-        println job.name
         job.delete()
     }
 }
