@@ -4,5 +4,9 @@ import hudson.*
 import hudson.model.*
 
 for (job in Jenkins.instance.items) {
-println "Job.Workspace : " + job.workspace
+if (job instanceof Folder) {
+println "This is a folder : " + job
+} else {
+println "This is a job : " + job
+}
 }
