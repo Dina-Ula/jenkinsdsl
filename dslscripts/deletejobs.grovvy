@@ -5,6 +5,7 @@ import hudson.model.*
 import com.cloudbees.hudson.plugins.folder.*
 
 for (job in Jenkins.instance.items) {
+println job
 if (job instanceof com.cloudbees.hudson.plugins.folder.Folder) {
 println "This is a folder : " + job
 } else {
