@@ -1,6 +1,6 @@
 jenkins.model.Jenkins.theInstance.getProjects().each { job ->
     if (!job.name.contains('deletejob')) {
-        println job.name
+        println "the job name: " + job.name
         job.delete()
     }
 }
