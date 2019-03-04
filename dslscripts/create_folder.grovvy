@@ -24,3 +24,4 @@ job("$basePath/gradle-example-deploy") {
     steps {
         shell 'scp war file; restart...'
     }
+ }
