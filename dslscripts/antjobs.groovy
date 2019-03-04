@@ -7,7 +7,7 @@ job('antbuild') {
         ant {
             prop('version', 'dev')
             buildFile('build.xml')
-            antInstallation('Ant 1.9.3')
+            antInstallation('Ant 1.10.5')
         }
     }
 
