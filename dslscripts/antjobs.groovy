@@ -22,6 +22,6 @@ job('deploy') {
      * configuring ssh plugin to run docker commands
      */
     steps{
-             shell 'cp /var/lib/jenkins/workspace/antbuild/build/demoapp-dev.war /opt/tomcat/latest/webapps/'
+             shell 'cp /opt/jenkins/workspace/antbuild/build/demoapp-dev.war /opt/tomcat/latest/webapps/'
       }
 }
