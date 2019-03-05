@@ -10,7 +10,7 @@ job('nodejs-dsl-checkout') {
 }
 
 job('nodejs-dsl-install') {
-	customWorkspace('/var/lib/jenkins/workspace/nodejs-dsl-checkout')
+	customWorkspace('/opt/jenkins/workspace/nodejs-dsl-checkout')
 
 	steps{
 		shell 'npm install'
@@ -22,7 +22,7 @@ job('nodejs-dsl-install') {
 }
 
 job('nodejs-dsl-test'){
-	customWorkspace('/var/lib/jenkins/workspace/nodejs-dsl-checkout')
+	customWorkspace('/opt/jenkins/workspace/nodejs-dsl-checkout')
 
 	steps{
 		shell 'npm start'
@@ -39,7 +39,7 @@ job('nodejs-dsl-test'){
 job('nodejs-dsl-archive'){
 	configure { project ->
         project / buildWrappers / 'org.jvnet.hudson.plugins.SSHBuildWrapper' {
-            siteName 'release@10.12.108.11:22'
+            siteName 'vagrant@ubuntu1:22'
             postScript """        
             	tar -zcvf /var/archive/app.tar.gz /var/myapp/           
 	      """
@@ -54,7 +54,7 @@ job('nodejs-dsl-archive'){
 job('nodejs-dsl-deploy'){
 	configure { project ->
         project / buildWrappers / 'org.jvnet.hudson.plugins.SSHBuildWrapper' {
-            siteName 'release@10.12.108.11:22'
+            siteName 'vagrant@ubuntu1:22'
             postScript """        
             	cd /var/myapp
             	git pull origin master
