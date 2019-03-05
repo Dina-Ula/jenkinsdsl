@@ -13,7 +13,7 @@ job('nodejs-dsl-install') {
 	customWorkspace('/opt/jenkins/workspace/nodejs-dsl-checkout')
 
 	steps{
-		shell 'npm install'
+		shell 'sudo npm install'
 	}
 
 	publishers{
